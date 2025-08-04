@@ -1,0 +1,232 @@
+.about-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+// 主容器
+.main-wrapper {
+  flex: 1;
+  padding: 80rpx 0 40rpx;
+}
+
+// 应用介绍区域
+.intro-section {
+  margin-bottom: 60rpx;
+}
+
+.intro-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24rpx;
+  padding: 40rpx 32rpx;
+  backdrop-filter: blur(20rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.version-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.version-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.build-text {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.description-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #ffffff;
+  font-weight: 400;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: normal;
+  display: block;
+  width: 100%;
+}
+
+// 功能区域
+.features-section {
+  margin-bottom: 60rpx;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24rpx;
+  padding: 40rpx 32rpx;
+  backdrop-filter: blur(20rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.section-icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.features-grid {
+  .feature-col {
+    padding: 8rpx;
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+}
+
+.feature-dot {
+  color: #ffffff;
+  font-size: 24rpx;
+  margin-right: 16rpx;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.feature-text {
+  font-size: 26rpx;
+  color: #ffffff;
+  font-weight: 400;
+  flex: 1;
+}
+
+// 操作按钮区域
+.actions-section {
+  margin-bottom: 40rpx;
+}
+
+.actions-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24rpx;
+  backdrop-filter: blur(20rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.action-icon-wrapper {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+  backdrop-filter: blur(10rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  
+  &.feedback {
+    background: rgba(255, 107, 107, 0.2);
+  }
+  
+  &.share {
+    background: rgba(46, 204, 113, 0.2);
+  }
+}
+
+.action-icon {
+  font-size: 36rpx;
+}
+
+.action-content {
+  flex: 1;
+}
+
+.action-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+}
+
+.action-desc {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.action-arrow {
+  font-size: 40rpx;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+// 底部信息
+.footer-section {
+  padding-bottom: 40rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  margin-bottom: 8rpx;
+}
+
+.powered {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+// Canvas样式 - 修复bug
+.poster-canvas {
+  position: fixed;
+  top: -9999rpx;
+  left: -9999rpx;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
