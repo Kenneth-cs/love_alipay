@@ -1,21 +1,16 @@
-export default defineAppConfig({
+export default {
   pages: [
     'pages/index/index',
-    'pages/mirror/index',
-    'pages/about/index'
+    'pages/scripts/index',
+    'pages/script-detail/index',
+    'pages/tips/index',
+    'pages/tip-detail/index',
+    'pages/favorites/index'
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: '神奇哈哈镜',
-    navigationBarTextStyle: 'black'
-  },
-  permission: {
-    'scope.camera': {
-      desc: '需要使用摄像头进行拍照和录制'
-    },
-    // 'scope.writePhotosAlbum': {
-    //   desc: '需要保存照片和视频到相册'
-    // }
+    navigationBarBackgroundColor: '#ff6b9d',
+    navigationBarTitleText: '恋爱话术助手',
+    navigationBarTextStyle: 'white'
   }
-})
+}

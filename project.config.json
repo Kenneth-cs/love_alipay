@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "mirror",
-  "description": "mirror",
+  "projectname": "love-mj",
+  "description": "love-mj",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

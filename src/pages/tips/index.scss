@@ -1,0 +1,402 @@
+.tips-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  position: relative;
+
+  // 搜索区域
+  .search-section {
+    padding: 15px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .search-bar {
+      border-radius: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // 分类标签
+  .category-tabs {
+    background: white;
+    
+    .at-tabs__header {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .at-tabs__item {
+      color: #666;
+      font-size: 28px;
+      
+      &.at-tabs__item--active {
+        color: #ff6b9d;
+        font-weight: 500;
+      }
+    }
+
+    .at-tabs__underline {
+      background: #ff6b9d;
+      height: 3px;
+      border-radius: 2px;
+    }
+  }
+
+  // 支招容器
+  .tips-container {
+    padding: 15px;
+    min-height: 400px;
+  }
+
+  // 支招列表
+  .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  // 支招卡片
+  .tip-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+
+      .category-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .category-icon {
+          width: 32px;
+          height: 32px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon-text {
+            font-size: 32px;
+          }
+        }
+
+        .category-name {
+          font-size: 24px;
+          color: #666;
+          font-weight: 500;
+        }
+      }
+
+      .bookmark-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        &:active {
+          transform: scale(0.9);
+          background: #e9ecef;
+        }
+      }
+    }
+
+    .tip-title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .tip-preview {
+      font-size: 28px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        .tag {
+          font-size: 24px;
+          color: #ff6b9d;
+          background: rgba(255, 107, 157, 0.1);
+          padding: 4px 8px;
+          border-radius: 10px;
+        }
+      }
+
+      .read-info {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .read-count {
+          font-size: 24px;
+          color: #999;
+        }
+      }
+    }
+
+    .read-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 8px;
+      background: rgba(255, 107, 157, 0.05);
+      border-radius: 8px;
+      margin-top: 8px;
+
+      .read-more-text {
+        font-size: 28px;
+        color: #ff6b9d;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 空状态
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .empty-text {
+      font-size: 32px;
+      color: #666;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .empty-tip {
+      font-size: 28px;
+      color: #999;
+      display: block;
+    }
+  }
+
+  // 浮动提示
+  .floating-tip {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+
+    .tip-content {
+      background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 100%);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: float 3s ease-in-out infinite;
+
+      .tip-icon {
+        font-size: 32px;
+      }
+
+      .tip-text {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// 动画
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 375px) {
+  .tips-page {
+    .tip-card {
+      padding: 15px;
+
+      .card-header {
+        margin-bottom: 12px;
+
+        .category-info {
+          gap: 8px;
+
+          .category-icon {
+            width: 28px;
+            height: 28px;
+
+            .icon-text {
+              font-size: 28px;
+            }
+          }
+
+          .category-name {
+            font-size: 22px;
+          }
+        }
+
+        .bookmark-btn {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .tip-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .tip-preview {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+
+      .card-footer {
+        margin-bottom: 10px;
+
+        .tags {
+          gap: 4px;
+
+          .tag {
+            font-size: 22px;
+            padding: 3px 6px;
+          }
+        }
+      }
+    }
+
+    .floating-tip {
+      bottom: 15px;
+      right: 15px;
+
+      .tip-content {
+        padding: 10px 14px;
+
+        .tip-icon {
+          font-size: 28px;
+        }
+
+        .tip-text {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+// 暗色模式适配
+@media (prefers-color-scheme: dark) {
+  .tips-page {
+    background: #1a1a1a;
+
+    .search-section {
+      background: #2d2d2d;
+    }
+
+    .category-tabs {
+      background: #2d2d2d;
+
+      .at-tabs__header {
+        border-bottom-color: #3a3a3a;
+      }
+
+      .at-tabs__item {
+        color: #ccc;
+
+        &.at-tabs__item--active {
+          color: #ff6b9d;
+        }
+      }
+    }
+
+    .tip-card {
+      background: #2d2d2d;
+
+      .tip-title {
+        color: #fff;
+      }
+
+      .tip-preview {
+        color: #ccc;
+      }
+
+      .category-name {
+        color: #999;
+      }
+
+      .read-count {
+        color: #666;
+      }
+
+      .bookmark-btn {
+        background: #3a3a3a;
+
+        &:active {
+          background: #4a4a4a;
+        }
+      }
+
+      .read-more {
+        background: rgba(255, 107, 157, 0.1);
+      }
+    }
+
+    .empty-text {
+      color: #ccc;
+    }
+
+    .empty-tip {
+      color: #666;
+    }
+  }
+}

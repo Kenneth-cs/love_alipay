@@ -1,0 +1,101 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  .tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .tab-icon {
+      margin-bottom: 2px;
+      transition: transform 0.3s ease;
+
+      .icon-text {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+
+    .tab-title {
+      font-size: 20px;
+      color: #999;
+      transition: color 0.3s ease;
+      line-height: 1.2;
+    }
+
+    &.active {
+      .tab-icon {
+        transform: scale(1.1);
+        
+        .icon-text {
+          filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.6));
+        }
+      }
+
+      .tab-title {
+        color: #ff6b9d;
+        font-weight: 600;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background: linear-gradient(90deg, #ff6b9d, #ff8a9b);
+        border-radius: 1px;
+      }
+    }
+
+    &:hover:not(.active) {
+      .tab-icon {
+        transform: scale(1.05);
+      }
+
+      .tab-title {
+        color: #666;
+      }
+    }
+  }
+}
+
+// 为页面内容添加底部padding，避免被TabBar遮挡
+.page-with-tabbar {
+  padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}
+
+// 动画效果
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.tab-bar .tab-item.active .tab-icon {
+  animation: bounce 0.6s ease;
+}

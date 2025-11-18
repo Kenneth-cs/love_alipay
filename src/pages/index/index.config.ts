@@ -1,4 +1,3 @@
-export default definePageConfig({
-  enableShareAppMessage: true,
-  enableShareTimeline: true,
-});
+export default {
+  navigationBarTitleText: '恋爱话术助手'
+}

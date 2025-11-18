@@ -5,7 +5,7 @@ import prodConfig from './prod'
 
 export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'webpack5'> = {
-    projectName: 'mirror',
+    projectName: 'love-mj',
     date: '2025-6-16',
     designWidth: 750,
     deviceRatio: {
@@ -48,6 +48,9 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
+      },
+      compile: {
+        exclude: []
       }
     },
     h5: {

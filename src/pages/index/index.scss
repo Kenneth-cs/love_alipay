@@ -1,226 +1,270 @@
 .index-page {
-  height: 100vh;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  flex-direction: column;
-  padding: 0 40rpx;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding-bottom: 20px;
 
-// 主容器
-.main-wrapper {
-  flex: 1;
-  padding: 80rpx 0 40rpx;
-}
+  // 简洁的顶部横幅
+  .header-banner {
+    padding: 40px 20px 30px;
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF8A9B 100%);
+    color: white;
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
 
-// Logo 区域
-.logo-section {
-  margin-bottom: 60rpx;
-}
+    .banner-content {
+      .banner-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+        line-height: 1.3;
+      }
 
-.logo-container {
-  text-align: center;
-}
+      .banner-subtitle {
+        font-size: 28px;
+        opacity: 0.9;
+        margin-bottom: 16px;
+        display: block;
+        line-height: 1.4;
+      }
 
-.logo-circle {
-  width: 160rpx;
-  height: 160rpx;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 40rpx;
-  backdrop-filter: blur(20rpx);
-  border: 2rpx solid rgba(255, 255, 255, 0.3);
-}
-
-.logo-emoji {
-  font-size: 80rpx;
-}
-
-.app-title {
-  display: block;
-  font-size: 56rpx;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 16rpx;
-  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
-}
-
-.app-subtitle {
-  display: block;
-  font-size: 28rpx;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
-  letter-spacing: 4rpx;
-}
-
-// 介绍文字
-.intro-section {
-  margin-bottom: 60rpx;
-}
-
-.intro-card {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 24rpx;
-  padding: 40rpx 32rpx;
-  backdrop-filter: blur(20rpx);
-  border: 1rpx solid rgba(255, 255, 255, 0.2);
-}
-
-.intro-text {
-  font-size: 20rpx;
-  line-height: 1.6;
-  color: #ffffff;
-  text-align: center;
-  font-weight: 400;
-  white-space: normal;
-  word-wrap: break-word;
-  word-break: normal;
-  display: block;
-  width: 100%;
-}
-
-// 特性展示 - 重新设计
-.features-section {
-  margin-bottom: 60rpx;
-}
-
-.features-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20rpx;
-  padding: 0 20rpx;
-}
-
-.feature-card {
-  flex: 1;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 24rpx;
-  padding: 40rpx 20rpx 32rpx;
-  text-align: center;
-  backdrop-filter: blur(20rpx);
-  border: 1rpx solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  
-  // 添加光晕效果
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    border-radius: 24rpx;
-    pointer-events: none;
+      .quick-stats {
+        .stats-text {
+          font-size: 24px;
+          background: rgba(255, 255, 255, 0.2);
+          padding: 6px 12px;
+          border-radius: 16px;
+          display: inline-block;
+          backdrop-filter: blur(10px);
+        }
+      }
+    }
   }
-  
-  // 悬停效果
-  &:active {
-    transform: translateY(-4rpx);
-    box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.15);
+
+  // 通用区块样式
+  .section {
+    margin: 20px 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+
+    .section-header {
+      margin-bottom: 16px;
+
+      .section-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333;
+        display: block;
+      }
+    }
   }
-}
 
-.feature-icon-wrapper {
-  width: 80rpx;
-  height: 80rpx;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20rpx;
-  backdrop-filter: blur(10rpx);
-  border: 1rpx solid rgba(255, 255, 255, 0.3);
-}
+  // 使用指南
+  .intro-section {
+    .intro-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 14px;
+      display: block;
+    }
 
-.feature-icon {
-  font-size: 40rpx;
-  line-height: 1;
-}
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
 
-.feature-title {
-  display: block;
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 12rpx;
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
-}
+      .step-item {
+        flex: 1;
+        text-align: center;
+        padding: 12px 6px;
+        background: #f8f9fa;
+        border-radius: 10px;
 
-.feature-desc {
-  display: block;
-  font-size: 22rpx;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
-  line-height: 1.4;
-}
+        .step-number {
+          display: block;
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          background: linear-gradient(135deg, #FF6B9D, #FF8A9B);
+          color: white;
+          border-radius: 50%;
+          font-weight: bold;
+          font-size: 28px;
+          margin: 0 auto 6px;
+        }
 
-// 按钮区域
-.button-section {
-  margin-bottom: 40rpx;
-}
+        .step-text {
+          font-size: 24px;
+          color: #666;
+          display: block;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
 
-.main-button {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
-  border: none !important;
-  border-radius: 50rpx !important;
-  height: 88rpx !important;
-  font-size: 32rpx !important;
-  font-weight: 500 !important;
-  color: #ffffff !important;
-  margin-bottom: 24rpx !important;
-  box-shadow: 0 8rpx 24rpx rgba(255, 107, 107, 0.3) !important;
-}
+  // 话术分类 - 简洁版
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
 
-.sub-button {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1rpx solid rgba(255, 255, 255, 0.3) !important;
-  border-radius: 50rpx !important;
-  height: 80rpx !important;
-  font-size: 28rpx !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10rpx);
-}
+    .category-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #f0f2f5;
 
-// 底部 - 修改为水平居中
-.footer-section {
-  padding-bottom: 40rpx;
-  text-align: center; // 添加水平居中
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      &:active {
+        transform: scale(0.95);
+        background: #e9ecef;
+      }
 
-.footer-slogan {
-  font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 300;
-}
+      .category-icon {
+        font-size: 20px;
+        margin-bottom: 6px;
+        display: block;
+      }
 
-// Taro UI 组件样式覆盖
-.at-button {
-  &::after {
-    border: none !important;
+      .category-name {
+        font-size: 26px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 3px;
+        display: block;
+        line-height: 1.2;
+      }
+
+      .category-count {
+        font-size: 22px;
+        color: #999;
+        display: block;
+      }
+    }
+  }
+
+  .view-all-btn {
+    background: linear-gradient(135deg, #FF6B9D, #FF8A9B);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .view-all-text {
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
+
+  // 快捷入口 - 简洁版
+  .quick-actions {
+    display: flex;
+    gap: 12px;
+
+    .action-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid #f0f2f5;
+
+      &:active {
+        transform: scale(0.95);
+        background: #e9ecef;
+      }
+
+      .action-text {
+        font-size: 24px;
+        color: #333;
+        margin-top: 6px;
+        font-weight: 500;
+      }
+    }
   }
 }
 
-// 确保按钮文字颜色
-.at-button--primary {
-  .at-button__text {
-    color: #ffffff !important;
+// 响应式设计
+@media (max-width: 375px) {
+  .index-page {
+    .header-banner {
+      padding: 30px 15px 25px;
+
+      .banner-content .banner-title {
+        font-size: 24px;
+      }
+    }
+
+    .section {
+      margin: 15px 15px;
+      padding: 16px;
+    }
+
+    .intro-section .steps {
+      gap: 8px;
+
+      .step-item {
+        padding: 12px 6px;
+
+        .step-number {
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          font-size: 28px;
+        }
+
+        .step-text {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .category-grid {
+      gap: 10px;
+
+      .category-card {
+        padding: 12px 8px;
+
+        .category-icon {
+          font-size: 20px;
+        }
+
+        .category-name {
+          font-size: 26px;
+        }
+      }
+    }
   }
 }
 
-.at-button--secondary {
-  .at-button__text {
-    color: rgba(255, 255, 255, 0.9) !important;
+// 动画效果
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeInUp 0.3s ease-out;
 }

@@ -1,0 +1,538 @@
+.favorites-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+
+  // 头部统计
+  .header-stats {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 100%);
+    color: white;
+    padding: 25px 20px;
+
+    .stats-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+
+      .stat-item {
+        text-align: center;
+
+        .stat-number {
+          font-size: 28px;
+          font-weight: bold;
+          display: block;
+          margin-bottom: 6px;
+        }
+
+        .stat-label {
+          font-size: 28px;
+          opacity: 0.9;
+          display: block;
+        }
+      }
+
+      .stat-divider {
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  // 分类标签
+  .category-tabs {
+    background: white;
+    
+    .at-tabs__header {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .at-tabs__item {
+      color: #666;
+      font-size: 28px;
+      
+      &.at-tabs__item--active {
+        color: #ff6b9d;
+        font-weight: 500;
+      }
+    }
+
+    .at-tabs__underline {
+      background: #ff6b9d;
+      height: 3px;
+      border-radius: 2px;
+    }
+  }
+
+  // 内容容器
+  .content-container {
+    padding: 15px;
+    min-height: 400px;
+  }
+
+  // 话术列表
+  .scripts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .script-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+
+        .title-section {
+          flex: 1;
+          margin-right: 10px;
+
+          .script-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+            line-height: 1.4;
+          }
+
+          .script-meta {
+            display: flex;
+            gap: 8px;
+
+            .category-tag,
+            .difficulty-tag {
+              font-size: 24px;
+              padding: 2px 8px;
+              border-radius: 10px;
+              background: rgba(0, 0, 0, 0.05);
+            }
+
+            .category-tag {
+              color: #666;
+            }
+          }
+        }
+
+        .action-buttons {
+          display: flex;
+          gap: 8px;
+
+          .action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+
+            &:active {
+              transform: scale(0.9);
+            }
+
+            &.remove {
+              background: rgba(255, 71, 87, 0.1);
+
+              &:active {
+                background: rgba(255, 71, 87, 0.2);
+              }
+            }
+          }
+        }
+      }
+
+      .script-content {
+        font-size: 30px;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .tags {
+          display: flex;
+          gap: 6px;
+
+          .tag {
+            font-size: 24px;
+            color: #ff6b9d;
+            background: rgba(255, 107, 157, 0.1);
+            padding: 4px 8px;
+            border-radius: 10px;
+          }
+        }
+
+        .use-count {
+          font-size: 24px;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  // 支招列表
+  .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .tip-card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+
+        .title-section {
+          flex: 1;
+          margin-right: 10px;
+
+          .tip-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            display: block;
+            line-height: 1.4;
+          }
+
+          .category-name {
+            font-size: 24px;
+            color: #666;
+            font-weight: 500;
+          }
+        }
+
+        .remove-btn {
+          width: 36px;
+          height: 36px;
+          border-radius: 18px;
+          background: rgba(255, 71, 87, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+
+          &:active {
+            transform: scale(0.9);
+            background: rgba(255, 71, 87, 0.2);
+          }
+        }
+      }
+
+      .tip-preview {
+        font-size: 28px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .tags {
+          display: flex;
+          gap: 6px;
+
+          .tag {
+            font-size: 24px;
+            color: #ff6b9d;
+            background: rgba(255, 107, 157, 0.1);
+            padding: 4px 8px;
+            border-radius: 10px;
+          }
+        }
+
+        .read-count {
+          font-size: 24px;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  // 空状态
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+
+    .empty-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .empty-text {
+      font-size: 36px;
+      color: #666;
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 500;
+    }
+
+    .empty-tip {
+      font-size: 28px;
+      color: #999;
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .empty-action {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 100%);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+
+      &:active {
+        transform: scale(0.95);
+        background: linear-gradient(135deg, #e55a87 0%, #e55a87 100%);
+      }
+
+      .action-text {
+        font-size: 28px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 375px) {
+  .favorites-page {
+    .header-stats {
+      padding: 20px 15px;
+
+      .stats-container {
+        gap: 30px;
+
+        .stat-item {
+          .stat-number {
+            font-size: 24px;
+            margin-bottom: 4px;
+          }
+
+          .stat-label {
+            font-size: 26px;
+          }
+        }
+
+        .stat-divider {
+          height: 35px;
+        }
+      }
+    }
+
+    .content-container {
+      padding: 12px;
+    }
+
+    .scripts-list {
+      gap: 12px;
+
+      .script-card {
+        padding: 14px;
+
+        .card-header {
+          margin-bottom: 10px;
+
+          .title-section {
+            .script-title {
+              font-size: 30px;
+              margin-bottom: 6px;
+            }
+
+            .script-meta {
+              gap: 6px;
+
+              .category-tag,
+              .difficulty-tag {
+                font-size: 22px;
+                padding: 2px 6px;
+              }
+            }
+          }
+
+          .action-buttons {
+            gap: 6px;
+
+            .action-btn {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+
+        .script-content {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .tips-list {
+      gap: 12px;
+
+      .tip-card {
+        padding: 15px;
+
+        .card-header {
+          margin-bottom: 10px;
+
+          .title-section {
+            .tip-title {
+              font-size: 30px;
+              margin-bottom: 4px;
+            }
+
+            .category-name {
+              font-size: 22px;
+            }
+          }
+
+          .remove-btn {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        .tip-preview {
+          font-size: 26px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .empty-state {
+      padding: 60px 15px;
+
+      .empty-icon {
+        font-size: 56px;
+        margin-bottom: 16px;
+      }
+
+      .empty-text {
+        font-size: 32px;
+      }
+
+      .empty-action {
+        padding: 10px 20px;
+
+        .action-text {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+// 暗色模式适配
+@media (prefers-color-scheme: dark) {
+  .favorites-page {
+    background: #1a1a1a;
+
+    .category-tabs {
+      background: #2d2d2d;
+
+      .at-tabs__header {
+        border-bottom-color: #3a3a3a;
+      }
+
+      .at-tabs__item {
+        color: #ccc;
+
+        &.at-tabs__item--active {
+          color: #ff6b9d;
+        }
+      }
+    }
+
+    .script-card,
+    .tip-card {
+      background: #2d2d2d;
+
+      .script-title,
+      .tip-title {
+        color: #fff;
+      }
+
+      .script-content,
+      .tip-preview {
+        color: #ccc;
+      }
+
+      .category-tag,
+      .category-name {
+        color: #999;
+      }
+
+      .use-count,
+      .read-count {
+        color: #666;
+      }
+
+      .action-btn:not(.remove),
+      .remove-btn {
+        background: #3a3a3a;
+
+        &:active {
+          background: #4a4a4a;
+        }
+      }
+    }
+
+    .empty-text {
+      color: #ccc;
+    }
+
+    .empty-tip {
+      color: #666;
+    }
+  }
+}

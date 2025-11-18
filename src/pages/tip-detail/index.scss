@@ -1,0 +1,516 @@
+.tip-detail-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  position: relative;
+
+  // 返回首页按钮
+  .back-to-home {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 12px 20px 8px;
+    border-bottom: 1px solid #f0f2f5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #f8f9fa;
+      border-radius: 20px;
+      width: fit-content;
+      transition: all 0.3s ease;
+
+      &:active {
+        transform: scale(0.95);
+        background: #e9ecef;
+      }
+
+      .back-text {
+        font-size: 28px;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // 加载状态
+  .loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+    .loading-text {
+      font-size: 32px;
+      color: #666;
+    }
+  }
+
+  // 滚动内容
+  .scroll-content {
+    height: calc(100vh - 80px); // 减去底部操作栏高度
+    padding-bottom: 20px;
+  }
+
+  // 头部信息
+  .header-section {
+    background: white;
+    padding: 25px 20px;
+    margin-bottom: 15px;
+
+    .category-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+
+      .category-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon-text {
+          font-size: 36px;
+        }
+      }
+
+      .category-name {
+        font-size: 28px;
+        color: #666;
+        font-weight: 500;
+      }
+    }
+
+    .tip-title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .meta-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .meta-text {
+          font-size: 26px;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  // 文章内容
+  .content-section {
+    background: white;
+    margin: 0 20px 15px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .content-container {
+      padding: 30px 25px;
+
+      .content-paragraph {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .paragraph-text {
+          font-size: 28px;
+          line-height: 1.6;
+          color: #333;
+          text-align: justify;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+
+  // 通用区块样式
+  .tags-section,
+  .related-section {
+    background: white;
+    margin: 0 20px 15px;
+    padding: 20px;
+    border-radius: 12px;
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+
+      .title-text {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+      }
+    }
+  }
+
+  // 标签区域
+  .tags-section {
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tag-item {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        
+        .tag-text {
+          font-size: 26px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // 相关推荐
+  .related-section {
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .related-item {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+
+        &:active {
+          transform: scale(0.98);
+          background: #e9ecef;
+        }
+
+        .related-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 10px;
+
+          .related-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon-text {
+              font-size: 28px;
+            }
+          }
+
+          .related-info {
+            flex: 1;
+
+            .related-title {
+              font-size: 30px;
+              font-weight: 600;
+              color: #333;
+              margin-bottom: 4px;
+              display: block;
+              line-height: 1.3;
+            }
+
+            .related-category {
+              font-size: 24px;
+              color: #666;
+              display: block;
+            }
+          }
+        }
+
+        .related-preview {
+          font-size: 26px;
+          color: #666;
+          line-height: 1.4;
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+
+  // 底部空白
+  .bottom-spacer {
+    height: 20px;
+  }
+
+  // 底部操作栏
+  .bottom-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 100;
+
+    .action-group {
+      display: flex;
+      gap: 10px;
+
+      .action-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+
+        &.secondary {
+          background: #f8f9fa;
+
+          &:active {
+            background: #e9ecef;
+          }
+        }
+
+        .btn-text {
+          font-size: 24px;
+          color: #666;
+        }
+      }
+    }
+
+    .like-btn {
+      flex: 1;
+      background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 100%);
+      border: none;
+      border-radius: 25px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 32px;
+      font-weight: 600;
+      color: white;
+
+      &::after {
+        display: none;
+      }
+
+      &:active {
+        background: linear-gradient(135deg, #e55a87 0%, #e55a87 100%);
+      }
+    }
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 375px) {
+  .tip-detail-page {
+    .header-section {
+      padding: 20px 15px;
+
+      .category-info {
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .category-icon {
+          width: 32px;
+          height: 32px;
+
+          .icon-text {
+            font-size: 32px;
+          }
+        }
+
+        .category-name {
+          font-size: 26px;
+        }
+      }
+
+      .tip-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .meta-info {
+        gap: 15px;
+
+        .meta-item {
+          gap: 4px;
+
+          .meta-text {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .content-section {
+      margin: 0 15px 15px;
+
+      .content-container {
+        padding: 25px 20px;
+
+        .content-paragraph {
+          margin-bottom: 18px;
+
+          .paragraph-text {
+            font-size: 30px;
+            line-height: 1.7;
+          }
+        }
+      }
+    }
+
+    .tags-section,
+    .related-section {
+      margin: 0 15px 15px;
+      padding: 15px;
+    }
+
+    .related-section {
+      .related-list {
+        gap: 12px;
+
+        .related-item {
+          padding: 15px;
+
+          .related-header {
+            gap: 10px;
+            margin-bottom: 8px;
+
+            .related-icon {
+              width: 24px;
+              height: 24px;
+
+              .icon-text {
+                font-size: 24px;
+              }
+            }
+
+            .related-info {
+              .related-title {
+                font-size: 28px;
+              }
+
+              .related-category {
+                font-size: 22px;
+              }
+            }
+          }
+
+          .related-preview {
+            font-size: 24px;
+            margin-left: 34px;
+          }
+        }
+      }
+    }
+
+    .bottom-actions {
+      padding: 12px 15px;
+      gap: 12px;
+
+      .action-group {
+        gap: 8px;
+
+        .action-btn {
+          padding: 6px 10px;
+
+          .btn-text {
+            font-size: 22px;
+          }
+        }
+      }
+
+      .like-btn {
+        height: 45px;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// 暗色模式适配
+@media (prefers-color-scheme: dark) {
+  .tip-detail-page {
+    background: #1a1a1a;
+
+    .header-section,
+    .content-section,
+    .tags-section,
+    .related-section {
+      background: #2d2d2d;
+    }
+
+    .tip-title,
+    .title-text {
+      color: #fff;
+    }
+
+    .category-name,
+    .meta-text {
+      color: #ccc;
+    }
+
+    .content-container {
+      .paragraph-text {
+        color: #e0e0e0;
+      }
+    }
+
+    .related-item {
+      background: #3a3a3a;
+
+      &:active {
+        background: #4a4a4a;
+      }
+
+      .related-title {
+        color: #fff;
+      }
+
+      .related-category,
+      .related-preview {
+        color: #ccc;
+      }
+    }
+
+    .bottom-actions {
+      background: #2d2d2d;
+    }
+
+    .action-btn.secondary {
+      background: #3a3a3a;
+
+      &:active {
+        background: #4a4a4a;
+      }
+
+      .btn-text {
+        color: #ccc;
+      }
+    }
+  }
+}
